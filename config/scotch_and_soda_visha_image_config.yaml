@@ -1,0 +1,38 @@
+train:
+  experiment_name: &name "scotch_and_soda_visha_iamge"  
+  gpus: 2
+  batch_size: 6 # For A10 with 24G, batch_size is 2. For A100 with 80G, batch_size is 24
+  max_epochs: &epochs 10
+  output_dir: &output_dir "./output"
+  tb_dirname: "tensorboard"
+  num_sanity_val_steps: 0
+  log_every_n_steps: 1
+  accelerator: "gpu"
+  strategy: "ddp"
+  checkpoint:
+    ckpt_dirname: "checkpoint"
+
+
+dataset:
+  dataset_name: "ViSha_dataset_image" 
+  scale: [512, 512]
+  data_root: "./dataset/ViSha"
+  image_folder: "images"
+  label_folder: "labels"
+  image_ext: ".jpg"
+  label_ext: ".png"
+  time_clips: &time_clips 1
+
+
+model:
+  experiment_name: *name
+  model_name: "scotch_and_soda"
+  loss_type: "mixed"
+  finetune_learning_rate: 0.00006
+  scratch_learning_rate: 0.00006
+  optimizer: "AdamW"
+  lr_scheduler: null
+  max_epochs: *epochs
+  output_dir: *output_dir
+  time_clips: *time_clips
+  pretrained_weight: null

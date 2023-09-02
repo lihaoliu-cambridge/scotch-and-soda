@@ -1,0 +1,38 @@
+train:
+  experiment_name: &name "scotch_and_soda_visha_video"  
+  gpus: 2
+  batch_size: 8
+  max_epochs: &epochs 12
+  output_dir: &output_dir "./output"
+  tb_dirname: "tensorboard"
+  num_sanity_val_steps: 0
+  log_every_n_steps: 1
+  accelerator: "gpu"
+  strategy: "ddp"
+  checkpoint:
+    ckpt_dirname: "checkpoint"
+
+
+dataset:
+  dataset_name: "ViSha_dataset_video" 
+  scale: [512, 512]
+  data_root: "./dataset/ViSha"
+  image_folder: "images"
+  label_folder: "labels"
+  image_ext: ".jpg"
+  label_ext: ".png"
+  time_clips: &time_clips 5 # set to 1 for single image
+
+
+model:
+  experiment_name: *name
+  model_name: "scotch_and_soda"
+  loss_type: "mixed"
+  finetune_learning_rate: 0.000001
+  scratch_learning_rate: 0.000001
+  optimizer: "AdamW"
+  lr_scheduler: null
+  max_epochs: *epochs
+  output_dir: *output_dir
+  time_clips: *time_clips
+  pretrained_weight: null # For finetune from image dataloader, change this to the path of your saved ckpt file.
