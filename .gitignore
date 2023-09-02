@@ -1,3 +1,6 @@
 __pycache__
 lightning_logs
 *DS_Store
+
+dataset/*
+output/*
