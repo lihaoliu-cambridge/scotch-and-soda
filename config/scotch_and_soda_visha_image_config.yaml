@@ -1,5 +1,5 @@
 train:
-  experiment_name: &name "scotch_and_soda_visha_iamge"  
+  experiment_name: &name "scotch_and_soda_visha_image"  
   gpus: 2
   batch_size: 6 # For A10 with 24G, batch_size is 2. For A100 with 80G, batch_size is 24
   max_epochs: &epochs 10
