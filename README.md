@@ -58,7 +58,7 @@ einops==0.6.1
    To view the training progress, start Tensorboard and open http://127.0.0.1:6006/ in your browser:
    
    ```shell
-   tensorboard --port=6006  --logdir=[Your Project Directory]/output/tensorboard/visha_scotch_and_soda_video
+   tensorboard --port=6006  --logdir=[Your Project Directory]/output/tensorboard/scotch_and_soda_visha_image
    ```
    <img src="https://github.com/lihaoliu-cambridge/lihaoliu-cambridge.github.io/blob/master/pic/papers/vsd_visualization.png" width="960"/>  
 
