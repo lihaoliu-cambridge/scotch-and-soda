@@ -315,7 +315,7 @@ def cal_fmeasure(precision, recall):
 def computeBER_mth(gt_path, pred_path): 
     print(gt_path, pred_path)
 
-    gt_list = get_image_list(gt_path)[:100]
+    gt_list = get_image_list(gt_path)
     nim = len(gt_list)
 
     stats = np.zeros((nim, 4), dtype='float')
