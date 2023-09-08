@@ -29,10 +29,10 @@ einops==0.6.1
    
 2. Dataset Preparation
 
-   Download and unzip [Visha dataset](https://erasernut.github.io/ViSha.html), Place the unzipped Visha directory into the dataset directory:
+   Download and unzip [ViSha dataset](https://erasernut.github.io/ViSha.html), Place the unzipped Visha directory into the dataset directory:
    
    ```shell
-   ./dataset/Visha
+   ./dataset/ViSha
    ```
    
 3. Configuration
