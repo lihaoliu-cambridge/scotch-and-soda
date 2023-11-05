@@ -27,7 +27,7 @@ einops==0.6.1
    cd scotch-and-soda
    ```
    
-2. Dataset Preparation
+2. **Dataset Preparation**
 
    Download and unzip [ViSha dataset](https://erasernut.github.io/ViSha.html), Place the unzipped Visha directory into the dataset directory:
    
@@ -35,7 +35,7 @@ einops==0.6.1
    ./dataset/ViSha
    ```
    
-3. Configuration
+3. **Configuration**
    
    Adjust the configurations for the dataloader, model architecture, and training logic in:
          
@@ -43,7 +43,7 @@ einops==0.6.1
    ./config/scotch_and_soda_visha_image_config.yaml
    ```
    
-4. Training
+4. **Training**
    
    To train the model, execute:
     
@@ -53,7 +53,7 @@ einops==0.6.1
 
    **Note**: Due to the large GPU memory requirement from the video-level dataloader, the dataloader has been switched to an image-level dataloader for easy training, which gives comparable results to the video-level dataloader. It's also advised to first train with the image-level dataloader and subsequently fine-tune with the video-level dataloader for fast convergency.
 
-5. Monitoring with Tensorboard
+5. **Monitoring with Tensorboard**
 
    To view the training progress, start Tensorboard and open http://127.0.0.1:6006/ in your browser:
    
@@ -62,7 +62,7 @@ einops==0.6.1
    ```
    <img src="https://github.com/lihaoliu-cambridge/lihaoliu-cambridge.github.io/blob/master/pic/papers/vsd_visualization.png" width="960"/>  
 
-6. Testing
+6. **Testing**
 
    After training, update the checkpoint file path in the test.py script. Then, test the trained model using:
    
